@@ -9,19 +9,11 @@ int zombies(int num, int t)
 {
 	pid_t* child = NULL;
 	const pid_t PPID = getpid();
-//	int swit = 2;
-//	int status = 0;
 
 	child = makeChilds(child, num);
 
 	if (PPID != getpid())
 		exit(0);
-/*
-	if (PPID != getpid() || !PROC)
-		execvp(*(argv + swit), (argv + swit));
-
-	while(wait(&status) > 0);
-*/
 	sleep(t);
 	free(child);
 
